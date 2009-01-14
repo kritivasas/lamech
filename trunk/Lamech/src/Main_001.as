@@ -5,7 +5,7 @@
 	import flash.utils.Dictionary;
 	import flash.net.URLRequest;
 	import flash.events.Event;
-	import flash.display.BitmapData;
+	import flash.display.*;
 	
 	import com.tinyempire.lamech.*;
 	import com.tinyempire.lamech.game.*;
