@@ -2,11 +2,13 @@ package {
 	import com.hexagonstar.util.debug.Debug;
 	import com.thetinyempire.lamech.Director;
 	import com.thetinyempire.lamech.Scene;
+	import com.thetinyempire.lamech.scene.*;
+	import com.thetinyempire.lamech.action.*;
 	import com.thetinyempire.lamech.config.WindowConfig;
-	import com.thetinyempire.lamech.scene.MoveInRTransition;
 	
 	import flash.display.Sprite;
 	import flash.display.StageScaleMode;
+	import flash.geom.Point;
 	
 	[SWF( frameRate='60')]
 	
@@ -41,13 +43,13 @@ package {
 			var sceneA:Scene = new Scene([layerAB, layerAA, control]);
 			var sceneB:Scene = new Scene([layerBB, layerBA, control]);
 			
-			//director.run(new MoveInRTransition(sceneA, 2, sceneB));//new MoveInRTransition(sceneA, 2, sceneB));
-			
-			director.push(new MoveInRTransition(new Scene([layerBB, layerBA, control]), 2, new Scene([layerAB, layerAA, control])))
-			director.push(new MoveInRTransition(new Scene([layerCB, layerAA, control]), 2, new Scene([layerBB, layerBA, control])))
-			director.push(new MoveInRTransition(new Scene([layerBB, layerBA, control]), 2, new Scene([layerCB, layerAA, control])))
+//			director.push(new MoveInRTransition(new Scene([layerBB, layerBA, control]), 2, new Scene([layerAB, layerAA, control])))
+//			director.push(new MoveInRTransition(new Scene([layerCB, layerAA, control]), 2, new Scene([layerBB, layerBA, control])))
+//			director.push(new MoveInRTransition(new Scene([layerBB, layerBA, control]), 2, new Scene([layerCB, layerAA, control])))
 			director.push(new MoveInRTransition(new Scene([layerAB, layerAA, control]), 2, new Scene([layerBB, layerBA, control])))
-			director.run(new Scene([layerAB, layerAA, control]));
+//			director.run(new Scene([layerAB, layerAA, control]));
+			director.run(sceneA)//.doAction(new Liquid(2,20,new Point(4, 4), 5)));
+			sceneA.doAction(new Liquid(10, 40,new Point(4, 4), 20));
 		}
 	}
 }

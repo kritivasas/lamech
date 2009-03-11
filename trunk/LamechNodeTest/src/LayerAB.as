@@ -6,7 +6,7 @@ package
 	{
 		public function LayerAB()
 		{
-			super(0xff000088);
+			super(0x33000088);
 		}
 	}
 }

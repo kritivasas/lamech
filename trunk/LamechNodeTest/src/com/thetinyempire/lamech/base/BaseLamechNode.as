@@ -2,6 +2,7 @@ package com.thetinyempire.lamech.base
 {
 	import com.adobe.utils.ArrayUtil;
 	import com.thetinyempire.lamech.EventLoop;
+	import com.thetinyempire.lamech.Grid2D;
 	import com.thetinyempire.lamech.KeyboardManager;
 	import com.thetinyempire.lamech.KeyboardManagerEvent;
 	import com.thetinyempire.lamech.Window;
@@ -47,7 +48,7 @@ package com.thetinyempire.lamech.base
 		// whether or not the object is visible
 		protected var _visible:Boolean
 		// the grid onject for actions
-		protected var _grid:Object
+		protected var _grid:Grid2D;
 		// list of Action objects that are running
 		protected var _actions:Array;
 		// list of Action objects to be removed
@@ -488,7 +489,7 @@ package com.thetinyempire.lamech.base
 		    
 		    if(_grid && _grid.active)
 		    {
-		    	//_grid.afterDraw(_camera);
+		    	_grid.afterDraw();//_camera
 		    }
 		    
 		    draw();
@@ -776,7 +777,26 @@ package com.thetinyempire.lamech.base
 		// MY_BITMAP_DRAWABLE
 		public function get myBitmapDrawable():IBitmapDrawable
 		{
-			return _BMD;
+			if(_grid && _grid.active)
+			{
+				return _grid.blit() as IBitmapDrawable;
+			}
+			else
+			{
+				return _BMD;
+			}
+		}
+		
+		// GRID
+		public function get grid():Grid2D
+		{
+			return _grid;
+		}
+		
+		public function set grid(g:Grid2D):void
+		{
+			_grid = g;
+			_grid.parent = this;
 		}
 	}
 }
