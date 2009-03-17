@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource>
+	<imageatlas id="atlas0" tile_w="32" tile_h="32" file="maps/map.png">
+	    <image id="blank" offset_x="2" offset_y="0" />
+	    <image id="block" offset_x="0" offset_y="0" />
+	    <image id="ramp" offset_x="1" offset_y="0" />
+	</imageatlas>
+	<tileset>
+    	<tile id="blank">
+    		<image ref="blank" />
+    	</tile>
+    	<tile id="block">
+    		<image ref="block" />
+    	</tile>
+    	<tile id="ramp">
+    		<image ref="ramp" />
+    	</tile>
+    </tileset>
+</resource>

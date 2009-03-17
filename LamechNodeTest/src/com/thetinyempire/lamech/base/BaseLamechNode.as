@@ -105,7 +105,7 @@ package com.thetinyempire.lamech.base
 
 			_runningActions = false;
 			
-			_BMD = new BitmapData(1,1,true,0x00000000);
+			_BMD = new BitmapData(100,100,true,0xff000000);
 		}
 		
 		// Schedule a function every *interval* sexonds
@@ -504,14 +504,38 @@ package com.thetinyempire.lamech.base
 			{
 				var matrix:Matrix = new Matrix();
 				matrix.translate(_x, _y);
-				_parent._BMD.draw(myBitmapDrawable, matrix, null, BlendMode.NORMAL);
+				matrix.scale(_scale,_scale);
+				
+				if(_grid && _grid.active)
+				{
+					var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+					_parent._BMD.draw(ibmd, matrix, null, BlendMode.NORMAL);
+				
+				}
+				else
+				{
+					_parent._BMD.draw(myBitmapDrawable, matrix, null, BlendMode.NORMAL);
+				
+				}
 				
 				//_BMD.fillRect(new Rectangle(0,0,_width,_height),0x00000000);
 			}
 			else
 			{
 				var win:Window = Window.getInstance();
-				win.draw({obj:myBitmapDrawable, x:_x, y:_y});
+				
+				if(_grid && _grid.active)
+				{
+					var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+					win.draw({obj:ibmd, x:_x, y:_y});
+				
+				}
+				else
+				{
+					win.draw({obj:myBitmapDrawable, x:_x, y:_y});
+				
+				}
+				
 			}
 		}
 		
@@ -777,14 +801,7 @@ package com.thetinyempire.lamech.base
 		// MY_BITMAP_DRAWABLE
 		public function get myBitmapDrawable():IBitmapDrawable
 		{
-			if(_grid && _grid.active)
-			{
-				return _grid.blit() as IBitmapDrawable;
-			}
-			else
-			{
-				return _BMD;
-			}
+			return _BMD;
 		}
 		
 		// GRID
@@ -797,6 +814,16 @@ package com.thetinyempire.lamech.base
 		{
 			_grid = g;
 			_grid.parent = this;
+		}
+		
+		// SCALE
+		public function set scale(s:Number):void
+		{
+			_scale = s
+			for each(var c:BaseLamechNode in _children)
+			{
+				c.scale = s;
+			}
 		}
 	}
 }

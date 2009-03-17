@@ -1,9 +1,7 @@
 package com.thetinyempire.lamech.util
 {
 		import flash.display.*;
-	import flash.geom.Rectangle;
-	import flash.geom.Matrix;
-	import flash.geom.ColorTransform;
+		import flash.geom.Matrix;
 
 	public class DistortImage 
 	{
@@ -202,7 +200,8 @@ package com.thetinyempire.lamech.util
 			}
 		}
 
-		private function __concat( m1, m2 ):Matrix{	
+		private function __concat( m1:Matrix, m2:Matrix ):Matrix
+		{	
 			//Relies on the original triangles being right angled with p0 being the right angle. 
 			//Therefore a = d = zero (before and after invert)
 			var mat:Matrix = new Matrix();

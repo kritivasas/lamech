@@ -1,6 +1,8 @@
-package com.thetinyempire.lamech
+package com.thetinyempire.lamech.layer
 {
 	import com.thetinyempire.lamech.base.BaseLamechNode;
+	import com.thetinyempire.lamech.Scene;
+	import com.thetinyempire.lamech.Director;
 	
 	import flash.display.BitmapData;
 	import flash.geom.Matrix;

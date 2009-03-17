@@ -1,6 +1,6 @@
 package
 {
-	import com.thetinyempire.lamech.ColorLayer;
+	import com.thetinyempire.lamech.layer.ColorLayer;
 	
 	public class LayerAB extends ColorLayer
 	{
