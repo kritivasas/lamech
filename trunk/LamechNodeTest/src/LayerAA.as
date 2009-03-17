@@ -2,7 +2,7 @@ package
 {
 	import com.thetinyempire.lamech.KeyboardManager;
 	import com.thetinyempire.lamech.KeyboardManagerEvent;
-	import com.thetinyempire.lamech.Layer;
+	import com.thetinyempire.lamech.layer.Layer;
 	import com.thetinyempire.lamech.action.*;
 	import com.thetinyempire.lamech.config.TextConfig;
 	import com.thetinyempire.lamech.text.Label;

@@ -1,6 +1,7 @@
 package com.thetinyempire.lamech
 {
 	import com.thetinyempire.lamech.config.WindowConfig;
+	import com.thetinyempire.lamech.layer.Layer;
 	
 	import flash.display.IBitmapDrawable;
 	import flash.display.Bitmap;

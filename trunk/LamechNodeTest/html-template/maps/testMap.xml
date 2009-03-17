@@ -1,0 +1,270 @@
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<resource>
+		<requires file="maps/testTiles.xml"/>
+		<rectmap id="map0" origin_x="0" origin_y="0" tile_w="32" tile_h ="32">
+			<column>
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="ramp" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+				<cell tile="block" />
+			</column>
+		</rectmap>
+	</resource>

@@ -3,7 +3,7 @@ package
 	import com.thetinyempire.lamech.Director;
 	import com.thetinyempire.lamech.KeyboardManager;
 	import com.thetinyempire.lamech.KeyboardManagerEvent;
-	import com.thetinyempire.lamech.Layer;
+	import com.thetinyempire.lamech.layer.Layer;
 	import com.thetinyempire.lamech.action.*;
 	
 	import com.hexagonstar.util.debug.Debug;

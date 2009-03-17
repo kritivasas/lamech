@@ -68,9 +68,9 @@ package com.thetinyempire.lamech
 					
 					//
 					
-					//var matrix:Matrix = new Matrix();
+					var matrix:Matrix = new Matrix();
 					
-					//matrix.translate(b.x, b.y);
+					matrix.translate(b.x, b.y);
 					//bmd.draw(rect,matrix);
 					
 					
@@ -90,7 +90,7 @@ package com.thetinyempire.lamech
 
 					dist.setTransform(b.x,b.y,c.x,c.y,d.x,d.y,a.x,a.y);
 					
-					bmd.draw(mc, new Matrix());
+					bmd.draw(mc, new Matrix(),null,null,null,true);
 				}
 			}
 			

@@ -1,8 +1,9 @@
-package com.thetinyempire.lamech
+package com.thetinyempire.lamech.layer
 {
 	import flash.display.BitmapData;
 	import flash.display.IBitmapDrawable;
 	import flash.geom.Point;
+	import com.thetinyempire.lamech.Director;
 	
 	public class ColorLayer extends Layer
 	{
