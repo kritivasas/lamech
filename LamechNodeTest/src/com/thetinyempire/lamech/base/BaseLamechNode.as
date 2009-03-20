@@ -5,11 +5,15 @@ package com.thetinyempire.lamech.base
 	import com.thetinyempire.lamech.Grid2D;
 	import com.thetinyempire.lamech.KeyboardManager;
 	import com.thetinyempire.lamech.KeyboardManagerEvent;
+	import com.thetinyempire.lamech.PhysWorld;
 	import com.thetinyempire.lamech.Window;
+	
+	import de.polygonal.motor2.dynamics.RigidBody;
 	
 	import flash.display.BitmapData;
 	import flash.display.BlendMode;
 	import flash.display.IBitmapDrawable;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
@@ -68,6 +72,9 @@ package com.thetinyempire.lamech.base
 		
 		protected var _eventLoop:EventLoop;
 		protected var _keyboardManager:KeyboardManager;
+		protected var _physWorld:PhysWorld;
+		
+		protected var _physRep:RigidBody;
 		
 		public function BaseLamechNode()
 		{
@@ -97,7 +104,7 @@ package com.thetinyempire.lamech.base
 			_isRunning = false;
 			
 			_eventLoop = EventLoop.getInstance();
-			
+			_physWorld = PhysWorld.getInstance();
 			_keyboardManager = KeyboardManager.getInstance();
 //			_keyboardManager.addEventListener(KeyboardManagerEvent.DOWN, onKeyDown)
 //			_keyboardManager.addEventListener(KeyboardManagerEvent.UP, onKeyUp);
@@ -503,8 +510,24 @@ package com.thetinyempire.lamech.base
 			if(_parent != null)
 			{
 				var matrix:Matrix = new Matrix();
+				
+				
+				
+				matrix.translate(-this._width/2 -16, -this._height/2 -16);
+				matrix.rotate(_rotation);
+				
+				var tfp:Sprite = new Sprite();
+				tfp.graphics.beginFill(0xff0000);
+				tfp.graphics.drawCircle(0,0,5);
+				tfp.graphics.endFill();
+				_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+				
+				matrix.translate(this._width/2 +16, this._height/2 +16);
+				
 				matrix.translate(_x, _y);
-				matrix.scale(_scale,_scale);
+				
+				
+				
 				
 				if(_grid && _grid.active)
 				{
@@ -514,8 +537,11 @@ package com.thetinyempire.lamech.base
 				}
 				else
 				{
+					
+					
 					_parent._BMD.draw(myBitmapDrawable, matrix, null, BlendMode.NORMAL);
-				
+					
+					
 				}
 				
 				//_BMD.fillRect(new Rectangle(0,0,_width,_height),0x00000000);
@@ -824,6 +850,12 @@ package com.thetinyempire.lamech.base
 			{
 				c.scale = s;
 			}
+		}
+		
+		//PHYS REF
+		public function get physRep():RigidBody
+		{
+			return this._physRep;
 		}
 	}
 }

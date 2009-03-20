@@ -33,7 +33,7 @@ package com.thetinyempire.lamech.text
 			_textformat = new TextFormat();
 			_textformat.font = "_sans";
             _textformat.color = config.color;
-            _textformat.size = 34;
+            _textformat.size = 12;
             //_textformat.underline = true;
             
             _textfield.defaultTextFormat = _textformat;

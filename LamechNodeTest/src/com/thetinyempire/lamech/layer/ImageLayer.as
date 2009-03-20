@@ -56,7 +56,6 @@ package com.thetinyempire.lamech.layer
 		
 		override public function get myBitmapDrawable():IBitmapDrawable
 		{
-			this._view
 			if(_imgRes.ready)
 			{
 				var bmd1:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);

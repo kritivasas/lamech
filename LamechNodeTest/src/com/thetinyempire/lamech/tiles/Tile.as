@@ -31,5 +31,10 @@ package com.thetinyempire.lamech.tiles
 		{
 			return(_image);
 		}
+		
+		public function get id():String
+		{
+			return _id;
+		}
 	}
 }
