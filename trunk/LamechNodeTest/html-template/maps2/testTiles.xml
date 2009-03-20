@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource>
-	<imageatlas id="atlas0" tile_w="32" tile_h="32" file="maps/map.png">
+	<imageatlas id="atlas0" tile_w="32" tile_h="32" file="maps2/map.png">
 	    <image id="blank" offset_x="2" offset_y="0" />
 	    <image id="block" offset_x="0" offset_y="0" />
 	    <image id="ramp" offset_x="1" offset_y="0" />

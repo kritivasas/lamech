@@ -66,34 +66,12 @@ package com.thetinyempire.lamech.layer
 		public function set debug(d:Boolean):void
 		{
 			_debug = d
-			_updateSpriteSet();
+			//_updateSpriteSet();
 		}
 		
 		protected function _updateSpriteSet():void
 		{
-			//Debug.trace(this._x);
-			// this should be elsewhere
-			_pxWidth = _cells.width * 32
-			_pxHeight = _cells.height * 32
 			
-			var bmd:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
-			var bmd2:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
-			
-			for(var i:uint = 0; i < _cells.width; i++)
-			{
-				for(var j:uint = 0; j < _cells.height; j++)
-				{
-					var cell:Cell = _cells.get(i, j);
-					var matrix:Matrix = new Matrix();
-					matrix.translate(cell.i * 32, cell.j * 32);
-					bmd.draw(cell.tile.image, matrix, null, null, null);
-				}
-			}
-			//var matrix:Matrix = new Matrix();
-			//matrix.translate(_view.x, _view.y);
-			
-			bmd2.copyPixels(bmd,_view,new Point(0,0));
-			_BMD.draw(bmd2);
 		}
 	}
 }
