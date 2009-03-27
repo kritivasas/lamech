@@ -222,7 +222,7 @@ package com.thetinyempire.lamech.layer
 			for each(var z:ScrollableLayer in _children)
 			{
 				z.setView(x, y, w, h);
-				z.scale = _scale;
+				//z.scale = _scale;
 			}
 			
 		}

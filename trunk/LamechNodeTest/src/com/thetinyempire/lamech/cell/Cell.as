@@ -1,8 +1,8 @@
 package com.thetinyempire.lamech.cell
 {
 	import com.thetinyempire.lamech.tiles.Tile;
-	
 	import flash.geom.Point;
+	import de.polygonal.motor2.dynamics.RigidBody;
 	
 //	 '''Base class for cells from rect and hex maps.
 //
@@ -22,6 +22,8 @@ package com.thetinyempire.lamech.cell
 		protected var _cell:Cell;
 		protected var _tile:Tile;
 		
+		public var physRep:RigidBody;
+		
 		public function Cell(i:uint, j:uint, w:uint, h:uint, properties:Object, tile:Tile)
 		{
 			_width = w;
@@ -30,6 +32,8 @@ package com.thetinyempire.lamech.cell
 			_j = j;
 			_properties = properties;
 			_tile = tile;
+			
+			physRep = null;
 		}
 		
 		public function asXML():XML

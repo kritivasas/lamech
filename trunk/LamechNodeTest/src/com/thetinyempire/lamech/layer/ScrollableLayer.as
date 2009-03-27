@@ -6,6 +6,8 @@ package com.thetinyempire.lamech.layer
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	
+	
+	
 //	A Cocos Layer that is scrollable in a Scene.
 //
 //    Scrollable layers have a view which identifies the section of the layer
@@ -65,42 +67,25 @@ package com.thetinyempire.lamech.layer
 		
 		override public function get myBitmapDrawable():IBitmapDrawable
 		{
-//			if(_tmRes.ready && _ready)
-//			{
-//				this._updateSpriteSet();
-//				return _BMD
-				//Debug.trace(this._x);
-				
-				
-//				// this should be elsewhere
-//				_pxWidth = _cells.width * 32
-//				_pxHeight = _cells.height * 32
-//				//
+			var bmd2:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
+			//var matrix:Matrix = new Matrix();
+			//matrix.translate(_view.x, _view.y);
+			
+			//
+			
+			bmd2.copyPixels(_BMD, _view, new Point(0,0));
+			return(bmd2);
+			
+			//
+			
+//			
+//				var bmd1:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
+//				var bmd2:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
 //				
-//				var bmd:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
-				var bmd2:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
-//				
-//				for(var i:uint = 0; i < _cells.width; i++)
-//				{
-//					for(var j:uint = 0; j < _cells.height; j++)
-//					{
-//						var cell:Cell = _cells.get(i, j);
-//						var matrix:Matrix = new Matrix();
-//						matrix.translate(cell.i * 32, cell.j * 32);
-//						bmd.draw(cell.tile.image, matrix, null, null, null);
-//					}
-//				}
-				var matrix:Matrix = new Matrix();
-				matrix.translate(_view.x, _view.y);
-//				
-				bmd2.copyPixels(_BMD,_view,new Point(0,0));
-//				_BMD.draw(bmd2);
-				return(bmd2);
-//			}
-//			else
-//			{
-//				return new BitmapData(50, 50, true, 0x55000000);
-//			}
+//				bmd2.draw(_imgRes.img,null,null,null,null,true);
+//				bmd1.copyPixels(bmd2, _view, new Point(0,0));
+//				return bmd1;
+			
 		}
 	}
 }

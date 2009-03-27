@@ -24,8 +24,8 @@ package com.thetinyempire.lamech.layer
 			
 			var p:Point = Director.getInstance().windowSize;
 			transformAnchor = new Point(p.x/2, p.y/2);
-			_width = p.x;
-			_height = p.y;
+			_width = 1000//p.x;
+			_height = 1000//p.y;
 			
 			_BMD = new BitmapData(p.x, p.y, true, 0x00000000);
 		}
