@@ -137,6 +137,51 @@ package {
 			/////////////////////////////////////////////////////////////////////////////////////////
 			//  PHYSWORLD TEST + RECTMAP LAYER TEST  w/ IMAG LAYER w/ SCROLLABLE LAYER  w/ LIQUID  //
 			/////////////////////////////////////////////////////////////////////////////////////////
+//			var phsyWorld:PhysWorld = PhysWorld.getInstance();
+////		
+//			var tileMapRes:TileMapResource = new TileMapResource('tileMapRes001');
+//			var mapLayer:RectMapLayer = new RectMapLayer('test', 32, 32, tileMapRes, new Point(0,0));
+//			tileMapRes.load('maps2/testMap.xml');
+////			
+//			var scrollManager:ScrollManager = new ScrollManager();
+//			scrollManager.add(mapLayer, 0, 'mapLayer');
+////			
+//			var controlLayer:scrollControlLayer = new scrollControlLayer(scrollManager);
+////			
+//			var layerAA:PhysLayer = new PhysLayer();
+//			var imgRes:ImageResource = new ImageResource('imgRes');
+//			var imgLayer:ImageLayer = new ImageLayer(imgRes);
+//			imgRes.load('maps2/test.jpg');
+////
+//			scrollManager.add(layerAA, 1, 'physLayer');
+//			
+//			scrollManager.doAction(new Liquid(100, 5,new Point(5, 5), 200));
+//			
+//			//
+//			//
+//			var layerGameBG:LayerGameBG = new LayerGameBG();
+//			var layerGameStart:LayerGameStart = new LayerGameStart();
+//			var layerGameEnd:LayerGameEnd = new LayerGameEnd();
+//			var layerGameControl:ControlLayer = new ControlLayer();
+//			
+//			var sceneA:Scene = new  Scene([layerGameBG, layerGameStart, layerGameControl])
+//			var sceneB:Scene = new Scene([ scrollManager, imgLayer, controlLayer, layerGameControl])
+//			var sceneC:Scene = new Scene([layerGameBG, layerGameEnd])
+//
+//			director.push(new MoveInRTransition(sceneB, 2, sceneC));
+//			director.push(new MoveInRTransition(sceneA, 2, sceneB))
+//		//	director.push(new MoveInRTransition(new Scene([layerCB, layerAA, control]), 2, new Scene([layerBB, layerBA, control])))
+//			
+//			///
+//			///
+//			///
+//			
+//			director.run(sceneA);
+
+
+			/////////////////////////////////////////////////////////////////////////////////////////
+			//  PHYSWORLD TEST + RECTMAP LAYER TEST  w/ IMAG LAYER w/ SCROLLABLE LAYER  w/ LIQUID  //
+			/////////////////////////////////////////////////////////////////////////////////////////
 			var phsyWorld:PhysWorld = PhysWorld.getInstance();
 //		
 			var tileMapRes:TileMapResource = new TileMapResource('tileMapRes001');
@@ -154,29 +199,11 @@ package {
 			imgRes.load('maps2/test.jpg');
 //
 			scrollManager.add(layerAA, 1, 'physLayer');
-			
-			scrollManager.doAction(new Liquid(100, 5,new Point(5, 5), 200));
-			
-			//
-			//
 			var layerGameBG:LayerGameBG = new LayerGameBG();
-			var layerGameStart:LayerGameStart = new LayerGameStart();
-			var layerGameEnd:LayerGameEnd = new LayerGameEnd();
 			var layerGameControl:ControlLayer = new ControlLayer();
-			
-			var sceneA:Scene = new  Scene([layerGameBG, layerGameStart, layerGameControl])
 			var sceneB:Scene = new Scene([ scrollManager, imgLayer, controlLayer, layerGameControl])
-			var sceneC:Scene = new Scene([layerGameBG, layerGameEnd])
-
-			director.push(new MoveInRTransition(sceneB, 2, sceneC));
-			director.push(new MoveInRTransition(sceneA, 2, sceneB))
-		//	director.push(new MoveInRTransition(new Scene([layerCB, layerAA, control]), 2, new Scene([layerBB, layerBA, control])))
-			
-			///
-			///
-			///
-			
-			director.run(sceneA);
+//
+			director.run(sceneB);
 		}
 	}
 }

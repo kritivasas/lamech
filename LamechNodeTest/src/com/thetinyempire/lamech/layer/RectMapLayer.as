@@ -14,6 +14,8 @@ package com.thetinyempire.lamech.layer
 	import flash.geom.Matrix;
 	import flash.geom.Point;
 	
+	import com.hexagonstar.util.debug.Debug;
+	
 //	Rectangular map.
 //
 //    Cells are stored in column-major order with y increasing up,
@@ -38,6 +40,8 @@ package com.thetinyempire.lamech.layer
 		private var _tw:uint;
 		private var _th:uint;
 		public var _tmRes:TileMapResource;
+		
+		private var _cellsBMD:BitmapData;
 		
 		public function RectMapLayer(id:String, tw:uint, th:uint, tmRes:TileMapResource, origin:Point = null)
 		{
@@ -71,43 +75,34 @@ package com.thetinyempire.lamech.layer
 			setView(0,0,this._width, this._height);
 			_cells = _tmRes.cells
 			
-				// this should be elsewhere
-				_pxWidth = _cells.width * 32
-				_pxHeight = _cells.height * 32
-				//
-				
-				//var bmd:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
-				//var bmd2:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
-				var zcount:uint = 0;
-				
-				for(var i:uint = 0; i < _cells.width; i++)
-				{
-					for(var j:uint = 0; j < _cells.height; j++)
-					{
-						var cell:Cell = _cells.get(i, j);
-						//var matrix:Matrix = new Matrix();
-						//matrix.translate(cell.i * 32, cell.j * 32);
-						//bmd.draw(cell.tile.image, matrix, null, null, null);
-						
-						var config:TextConfig = new TextConfig();
-						config.text = cell.tile.id;
-						config.color = 0xffffff
-						config.position = new Point(cell.i *32, cell.j *32);
-						
-						if(cell.tile.id != "blank")
-						{
-							var sp:LamechSprite = new LamechSprite(cell.tile.image, new Point(cell.i *32, cell.j *32))
-							this.add(sp, zcount, 'label'+zcount);
-							zcount++;
-						}
-					}
-				}
-				//var matrix:Matrix = new Matrix();
-				//matrix.translate(_view.x, _view.y);
-				
-				//bmd2.copyPixels(bmd,_view,new Point(0,0));
-				//_BMD.draw(bmd2);
-
+			// this should be elsewhere
+			_pxWidth = _cells.width * 32;
+			_pxHeight = _cells.height * 32;
+			//
+			
+			//_cellsBMD = new BitmapData(_pxHeight, _pxHeight);
+			
+//			var zcount:uint = 0;
+//			
+//			for(var i:uint = 0; i < _cells.width; i++)
+//			{
+//				for(var j:uint = 0; j < _cells.height; j++)
+//				{
+//					var cell:Cell = _cells.get(i, j);
+//					var config:TextConfig = new TextConfig();
+//					
+//					config.text = cell.tile.id;
+//					config.color = 0xffffff
+//					config.position = new Point(cell.i *32, cell.j *32);
+//					
+//					if(cell.tile.id != "blank")
+//					{
+//						var sp:LamechSprite = new LamechSprite(cell.tile.image, new Point(cell.i *32, cell.j *32))
+//						this.add(sp, zcount, 'label'+zcount);
+//						zcount++;
+//					}
+//				}
+//			}
 			_ready = true;
 		}
 		
@@ -191,5 +186,57 @@ package com.thetinyempire.lamech.layer
 //				return new BitmapData(50, 50, true, 0x55000000);
 //			}
 //		}
+		
+		override public function get myBitmapDrawable():IBitmapDrawable
+		{
+			if(_tmRes.ready)
+			{
+//				var bmd1:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
+//				var bmd2:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
+				
+//				Debug.trace(_BMD.width);
+//				//bmd2.draw(_imgRes.img,null,null,null,null,true);
+//				bmd1.copyPixels(_BMD, _view, new Point(0,0));
+//				return bmd1;
+
+				var zcount:uint = 0;
+				var tbmd:BitmapData = new BitmapData(1000,1000, true, 0x00000000);
+				var tbmd2:BitmapData = new BitmapData(1000,1000, true, 0x00000000);
+				
+				for(var i:uint = 0; i < _cells.width; i++)
+				{
+					for(var j:uint = 0; j < _cells.height; j++)
+					{
+						var cell:Cell = _cells.get(i, j);
+//						var config:TextConfig = new TextConfig();						
+//						config.text = cell.tile.id;
+//						config.color = 0xffffff
+//						config.position = new Point(cell.i *32, cell.j *32);
+				
+						if(cell.tile.id != "blank")
+						{
+							if(cell.physRep == null)
+							{
+								cell.physRep = _physWorld.createBox(new Point(cell.i*32, cell.j*32), 0);
+							}
+							//var sp:LamechSprite = new LamechSprite(cell.tile.image, new Point(cell.i *32, cell.j *32))
+							//this.add(sp, zcount, 'label'+zcount);
+							var matrix:Matrix = new Matrix();
+							matrix.translate(cell.i *32, cell.j *32);
+							tbmd.draw(cell.tile.image, matrix);
+							zcount++;
+						}
+					}
+				}
+				
+				tbmd2.copyPixels(tbmd, _view, new Point(0,0));
+				
+				return(tbmd2);
+			}
+			else
+			{
+				return new BitmapData(50, 50, true, 0x55000000);
+			}
+		}
 	}
 }

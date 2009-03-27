@@ -511,8 +511,6 @@ package com.thetinyempire.lamech.base
 			{
 				var matrix:Matrix = new Matrix();
 				
-				
-				
 				matrix.translate(-this._width/2 -16, -this._height/2 -16);
 				matrix.rotate(_rotation);
 				
@@ -520,31 +518,21 @@ package com.thetinyempire.lamech.base
 				tfp.graphics.beginFill(0xff0000);
 				tfp.graphics.drawCircle(0,0,5);
 				tfp.graphics.endFill();
+				
 				_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
 				
 				matrix.translate(this._width/2 +16, this._height/2 +16);
-				
 				matrix.translate(_x, _y);
-				
-				
-				
 				
 				if(_grid && _grid.active)
 				{
 					var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
 					_parent._BMD.draw(ibmd, matrix, null, BlendMode.NORMAL);
-				
 				}
 				else
 				{
-					
-					
 					_parent._BMD.draw(myBitmapDrawable, matrix, null, BlendMode.NORMAL);
-					
-					
 				}
-				
-				//_BMD.fillRect(new Rectangle(0,0,_width,_height),0x00000000);
 			}
 			else
 			{
@@ -554,14 +542,11 @@ package com.thetinyempire.lamech.base
 				{
 					var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
 					win.draw({obj:ibmd, x:_x, y:_y});
-				
 				}
 				else
 				{
 					win.draw({obj:myBitmapDrawable, x:_x, y:_y});
-				
 				}
-				
 			}
 		}
 		
