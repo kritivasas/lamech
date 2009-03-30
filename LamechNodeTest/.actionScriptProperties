@@ -2,7 +2,7 @@
 <actionScriptProperties mainApplicationPath="LamechNodeTest.as" version="3">
 <compiler additionalCompilerArguments="" copyDependentFiles="true" enableModuleDebug="true" flexSDK="Flex 4.0" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersion="10.0.0" htmlPlayerVersionCheck="true" outputFolderPath="bin-debug" sourceFolderPath="src" strict="true" useApolloConfig="false" verifyDigests="true" warn="true">
 <compilerSourcePath>
-<compilerSourcePathEntry kind="1" linkType="1" path="C:/Documents and Settings/Kristoff Dedmun/My Documents/CLASS LIBRARY AS3"/>
+<compilerSourcePathEntry kind="1" linkType="1" path="/Users/fusupo/Documents/CLASS LIBRARY AS3"/>
 </compilerSourcePath>
 <libraryPath defaultLinkType="1">
 <libraryPathEntry kind="4" path="">
@@ -20,7 +20,6 @@
 <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/framework.swc" useDefaultLinkType="false"/>
 </excludedEntries>
 </libraryPathEntry>
-<libraryPathEntry kind="3" linkType="1" path="C:/Program Files/Adobe/Adobe Flash CS4/Common/Configuration/ActionScript 3.0/libs/flash.swc" useDefaultLinkType="false"/>
 </libraryPath>
 <sourceAttachmentPath/>
 </compiler>

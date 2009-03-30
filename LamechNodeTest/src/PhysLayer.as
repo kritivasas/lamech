@@ -3,9 +3,11 @@ package
 	import com.thetinyempire.lamech.KeyboardManager;
 	import com.thetinyempire.lamech.KeyboardManagerEvent;
 	import com.thetinyempire.lamech.LamechSprite;
+	import com.thetinyempire.lamech.PhysWorld;
 	import com.thetinyempire.lamech.action.*;
 	import com.thetinyempire.lamech.layer.ScrollableLayer;
 	
+	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Point;
@@ -19,7 +21,7 @@ package
 			super();
 			
 			var sp:Sprite = new Sprite()
-			sp.graphics.beginFill(0x00ff00, .5);
+			sp.graphics.beginFill(0xff0000, 1);
 			sp.graphics.drawRect(0,0,32,32);
 			sp.graphics.endFill();
 			
@@ -29,6 +31,15 @@ package
 			
 			_keyboardManager.addEventListener(KeyboardManagerEvent.DOWN, checkKeysDown);
 			//
+			
+			var pw:PhysWorld = PhysWorld.getInstance();
+			
+			_width = 22 * 32;
+			_height = 12 * 32;
+			_pxWidth = _width;
+			_pxHeight = _height;
+			
+			_BMD = new BitmapData(1000,1000,true,0x00000000);
 		}
 		
 		override public function onEnter():void

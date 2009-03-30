@@ -8,6 +8,8 @@ package com.thetinyempire.lamech.layer
 	
 	import org.casalib.util.ArrayUtil;
 	
+	import com.hexagonstar.util.debug.Debug;
+	
 //	'''Manages scrolling of Layers in a Cocos Scene.
 //
 //    Each layer that is added to this manager (via standard list methods)
@@ -221,7 +223,14 @@ package com.thetinyempire.lamech.layer
 			
 			for each(var z:ScrollableLayer in _children)
 			{
-				z.setView(x, y, w, h);
+				var tx:Number = x / (bMaxX/(z.pxWidth - w))
+				var ty:Number = y / (bMaxY/(z.pxHeight - h))
+				
+				//Debug.trace(ty)
+				
+				//ty < 0 ? ty = z.view.y : {};
+				
+				z.setView(tx, ty , w, h);
 				//z.scale = _scale;
 			}
 			

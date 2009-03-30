@@ -13,33 +13,13 @@
 				<cell tile="block" />
 				<cell tile="block" />
 				<cell tile="block" />
-			</column>
-			<column>
 				<cell tile="block" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
 				<cell tile="block" />
 				<cell tile="blank" />
 				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="block" />
-			</column>
-			<column>
-				<cell tile="block" />
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
@@ -60,16 +40,6 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
-				<cell tile="block" />
-			</column>
-			<column>
-				<cell tile="block" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
@@ -78,16 +48,6 @@
 				<cell tile="block" />
 				<cell tile="blank" />
 				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="block" />
-			</column>
-			<column>
-				<cell tile="block" />
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
@@ -108,16 +68,6 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
-				<cell tile="block" />
-			</column>
-			<column>
-				<cell tile="block" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
@@ -126,16 +76,6 @@
 				<cell tile="block" />
 				<cell tile="blank" />
 				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="blank" />
-				<cell tile="block" />
-			</column>
-			<column>
-				<cell tile="block" />
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
@@ -156,6 +96,22 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
@@ -168,10 +124,84 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
 				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="blank" />
+				<cell tile="block" />
+			</column>
+			<column>
+				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="blank" />
@@ -192,6 +222,8 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="ramp" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
@@ -204,6 +236,8 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
@@ -216,6 +250,8 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
@@ -228,6 +264,8 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
@@ -240,6 +278,8 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
@@ -252,9 +292,13 @@
 				<cell tile="blank" />
 				<cell tile="blank" />
 				<cell tile="block" />
+				<cell tile="blank" />
+				<cell tile="blank" />
 				<cell tile="block" />
 			</column>
 			<column>
+				<cell tile="block" />
+				<cell tile="block" />
 				<cell tile="block" />
 				<cell tile="block" />
 				<cell tile="block" />

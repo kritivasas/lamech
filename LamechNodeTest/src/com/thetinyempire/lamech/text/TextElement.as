@@ -1,10 +1,10 @@
 package com.thetinyempire.lamech.text
 {
-	import com.thetinyempire.lamech.Window;
 	import com.thetinyempire.lamech.base.BaseLamechNode;
 	import com.thetinyempire.lamech.config.TextConfig;
 	
 	import flash.display.IBitmapDrawable;
+	import flash.display.Sprite;
 	import flash.geom.Matrix;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
@@ -48,6 +48,35 @@ package com.thetinyempire.lamech.text
 //			createElement();
 		}
 		
+		override public function draw(...args):void
+		{
+			var matrix:Matrix = new Matrix();
+			
+//			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+//			matrix.rotate(_rotation);
+			
+//			var tfp:Sprite = new Sprite();
+//			tfp.graphics.beginFill(0xff0000);
+//			tfp.graphics.drawCircle(0,0,5);
+//			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+//			matrix.translate(this._width/2 +16, this._height/2 +16);
+
+			matrix.translate(_x, _y);
+			
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				_parent._BMD.draw(ibmd, matrix, null);
+			}
+			else
+			{
+				_parent._BMD.draw(_textfield, matrix, null);
+			}
+		}
+		
 //		public function createElement()
 //		{
 //			_element = 
@@ -63,13 +92,6 @@ package com.thetinyempire.lamech.text
 		public function set opacity(o:Number):void
 		{
 			_opacity = o;
-		}
-		
-		//
-		
-		override public function get myBitmapDrawable():IBitmapDrawable
-		{
-			return _textfield;
 		}
 	}
 }

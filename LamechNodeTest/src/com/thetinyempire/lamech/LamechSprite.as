@@ -3,6 +3,8 @@ package com.thetinyempire.lamech
 	import com.thetinyempire.lamech.base.BaseLamechNode;
 	
 	import flash.display.IBitmapDrawable;
+	import flash.display.Sprite;
+	import flash.geom.Matrix;
 	import flash.geom.Point;
 
 	public class LamechSprite extends BaseLamechNode
@@ -68,6 +70,38 @@ package com.thetinyempire.lamech
 			
 		}
 		
+		override public function draw(...args):void
+		{
+			var matrix:Matrix = new Matrix();
+			
+			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+			matrix.rotate(_rotation);
+			
+			var tfp:Sprite = new Sprite();
+			tfp.graphics.beginFill(0xff0000);
+			tfp.graphics.drawCircle(0,0,5);
+			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+			matrix.translate(this._width/2 +16, this._height/2 +16);
+
+			matrix.translate(_x, _y);
+			
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				_parent._BMD.draw(ibmd, matrix, null);
+			}
+			else
+			{
+				anchor = new Point(_physRep.x, _physRep.y);
+				this._rotation = _physRep.r;
+			
+				_parent._BMD.draw(_image as IBitmapDrawable, matrix, null);
+			}
+		}
+		
 		public function set imageAnchorX(n:Number):void
 		{
 			_image.anchorX = n;
@@ -94,26 +128,6 @@ package com.thetinyempire.lamech
 		{
 			imageAnchorX = p.x;
 			imageAnchorY = p.y;
-		}
-		
-//		override public function draw(...args):void
-//		{
-//			// do some shit here!!!
-//		} 
-
-		// MY_BITMAP_DRAWABLE
-		override public function get myBitmapDrawable():IBitmapDrawable
-		{
-			//var matrix:Matrix = new Matrix();
-			//matrix.rotate(_physRep.r);
-			//matrix.translate(_physRep.x, _physRep.y);
-			//Debug.trace(_physRep.x + ' ,  '+ _physRep.y);
-			//var bmd:BitmapData = new BitmapData(32, 32, true, 0xffffffff);
-			//bmd.draw(_image as IBitmapDrawable, matrix);
-			
-			anchor = new Point(_physRep.x, _physRep.y);
-			this._rotation = _physRep.r;
-			return _image as IBitmapDrawable
 		}
 	}
 }

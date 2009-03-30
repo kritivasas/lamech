@@ -43,15 +43,17 @@ package
 					case KeyboardManager.KEY_ARROW_UP:
 						dir = new Point(_sm.fx, _sm.fy + _speed);
 					break;
-					case KeyboardManager.KEY_ARROW_RIGHT:
+					case KeyboardManager.KEY_ARROW_LEFT:
 						dir = new Point(_sm.fx - _speed >= 0 ? _sm.fx - _speed : 0, _sm.fy);
 					break;
-					case KeyboardManager.KEY_ARROW_LEFT:
+					case KeyboardManager.KEY_ARROW_RIGHT:
 						dir = new Point(_sm.fx + _speed, _sm.fy);
 					break;
 				}
-				_sm.setFocus(dir.x, dir.y);
-				
+				if(dir!= null)
+				{
+					_sm.setFocus(dir.x, dir.y);
+				}
 			}
 		}
 	}

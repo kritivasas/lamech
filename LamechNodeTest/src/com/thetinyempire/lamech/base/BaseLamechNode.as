@@ -6,14 +6,11 @@ package com.thetinyempire.lamech.base
 	import com.thetinyempire.lamech.KeyboardManager;
 	import com.thetinyempire.lamech.KeyboardManagerEvent;
 	import com.thetinyempire.lamech.PhysWorld;
-	import com.thetinyempire.lamech.Window;
 	
 	import de.polygonal.motor2.dynamics.RigidBody;
 	
 	import flash.display.BitmapData;
-	import flash.display.BlendMode;
 	import flash.display.IBitmapDrawable;
-	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
@@ -506,48 +503,7 @@ package com.thetinyempire.lamech.base
 		// This function will be overriden if you want your subclassed to draw something on screen
 		public function draw(...args):void
 		{
-			//_BMD.fillRect(new Rectangle(0,0,_width,_height),0x00000000);
-			if(_parent != null)
-			{
-				var matrix:Matrix = new Matrix();
-				
-				matrix.translate(-this._width/2 -16, -this._height/2 -16);
-				matrix.rotate(_rotation);
-				
-				var tfp:Sprite = new Sprite();
-				tfp.graphics.beginFill(0xff0000);
-				tfp.graphics.drawCircle(0,0,5);
-				tfp.graphics.endFill();
-				
-				_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
-				
-				matrix.translate(this._width/2 +16, this._height/2 +16);
-				matrix.translate(_x, _y);
-				
-				if(_grid && _grid.active)
-				{
-					var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
-					_parent._BMD.draw(ibmd, matrix, null, BlendMode.NORMAL);
-				}
-				else
-				{
-					_parent._BMD.draw(myBitmapDrawable, matrix, null, BlendMode.NORMAL);
-				}
-			}
-			else
-			{
-				var win:Window = Window.getInstance();
-				
-				if(_grid && _grid.active)
-				{
-					var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
-					win.draw({obj:ibmd, x:_x, y:_y});
-				}
-				else
-				{
-					win.draw({obj:myBitmapDrawable, x:_x, y:_y});
-				}
-			}
+			
 		}
 		
 		// Executes an *action*
@@ -807,12 +763,6 @@ package com.thetinyempire.lamech.base
 		public function set visible(v:Boolean):void
 		{
 			_visible = v
-		}
-		
-		// MY_BITMAP_DRAWABLE
-		public function get myBitmapDrawable():IBitmapDrawable
-		{
-			return _BMD;
 		}
 		
 		// GRID
