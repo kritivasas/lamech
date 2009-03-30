@@ -7,6 +7,7 @@ package com.thetinyempire.lamech.layer
 	import flash.display.BitmapData;
 	import flash.display.IBitmapDrawable;
 	import flash.events.Event;
+	import flash.geom.Matrix;
 	import flash.geom.Point;
 	
 	public class ImageLayer extends ScrollableLayer
@@ -48,27 +49,57 @@ package com.thetinyempire.lamech.layer
 			
 		}
 		
+		override public function draw(...args):void
+		{
+			var matrix:Matrix = new Matrix();
+			
+//			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+//			matrix.rotate(_rotation);
+			
+//			var tfp:Sprite = new Sprite();
+//			tfp.graphics.beginFill(0xff0000);
+//			tfp.graphics.drawCircle(0,0,5);
+//			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+//			matrix.translate(this._width/2 +16, this._height/2 +16);
+			matrix.translate(_x, _y);
+			
+			
+			
+			
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				_parent._BMD.draw(ibmd, matrix, null);
+			}
+			else
+			{
+				var tbmd:BitmapData;
+			
+				if(_imgRes.ready)
+				{
+					var bmd1:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
+					var bmd2:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
+					
+					bmd2.draw(_imgRes.img,null,null,null,null,true);
+					bmd1.copyPixels(bmd2, _view, new Point(0,0));
+					tbmd= bmd1;
+				}
+				else
+				{
+					tbmd = new BitmapData(50, 50, true, 0x55000000);
+				}
+			
+				_parent._BMD.draw(tbmd, matrix, null);
+			}
+		}
+		
 		private function onComplete(e:Event):void
 		{
 			init()
 			_imgRes.removeEventListener(Event.COMPLETE, onComplete);
-		}
-		
-		override public function get myBitmapDrawable():IBitmapDrawable
-		{
-			if(_imgRes.ready)
-			{
-				var bmd1:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
-				var bmd2:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
-				
-				bmd2.draw(_imgRes.img,null,null,null,null,true);
-				bmd1.copyPixels(bmd2, _view, new Point(0,0));
-				return bmd1;
-			}
-			else
-			{
-				return new BitmapData(50, 50, true, 0x55000000);
-			}
 		}
 	}
 }

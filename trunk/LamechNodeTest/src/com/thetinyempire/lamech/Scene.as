@@ -4,9 +4,9 @@ package com.thetinyempire.lamech
 	import com.thetinyempire.lamech.base.BaseLamechNode;
 	
 	import flash.display.BitmapData;
+	import flash.display.IBitmapDrawable;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
-	import flash.geom.Rectangle;
 	
 	public class Scene extends BaseLamechNode
 	{
@@ -81,6 +81,34 @@ package com.thetinyempire.lamech
 //				removeAllHandlers();
 //			}
 //			_handlersEnabled = value;
+		}
+		
+		override public function draw(...args):void
+		{
+			var matrix:Matrix = new Matrix();
+			
+//			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+//			matrix.rotate(_rotation);
+			
+//			var tfp:Sprite = new Sprite();
+//			tfp.graphics.beginFill(0xff0000);
+//			tfp.graphics.drawCircle(0,0,5);
+//			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+//			matrix.translate(this._width/2 +16, this._height/2 +16);
+			matrix.translate(_x, _y);
+			var win:Window = Window.getInstance();
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				win.draw({obj:ibmd, x:_x, y:_y});
+			}
+			else
+			{
+				win.draw({obj:_BMD, x:_x, y:_y});
+			}
 		}
 		
 		public function end(value:Object = null):void

@@ -1,13 +1,13 @@
 package com.thetinyempire.lamech.layer
 {
-	import com.thetinyempire.lamech.base.BaseLamechNode;
-	import com.thetinyempire.lamech.Scene;
 	import com.thetinyempire.lamech.Director;
+	import com.thetinyempire.lamech.Scene;
+	import com.thetinyempire.lamech.base.BaseLamechNode;
 	
 	import flash.display.BitmapData;
+	import flash.display.IBitmapDrawable;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
-	import flash.geom.Rectangle;
 
 	public class Layer extends BaseLamechNode
 	{
@@ -24,8 +24,8 @@ package com.thetinyempire.lamech.layer
 			
 			var p:Point = Director.getInstance().windowSize;
 			transformAnchor = new Point(p.x/2, p.y/2);
-			_width = 1000//p.x;
-			_height = 1000//p.y;
+			_width = p.x;
+			_height = p.y;
 			
 			_BMD = new BitmapData(p.x, p.y, true, 0x00000000);
 		}
@@ -80,6 +80,34 @@ package com.thetinyempire.lamech.layer
 //					Director.getInstance().window.pushHandlers(this)
 //				}
 //			}
+		}
+		
+		override public function draw(...args):void
+		{
+			var matrix:Matrix = new Matrix();
+			
+//			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+//			matrix.rotate(_rotation);
+			
+//			var tfp:Sprite = new Sprite();
+//			tfp.graphics.beginFill(0xff0000);
+//			tfp.graphics.drawCircle(0,0,5);
+//			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+//			matrix.translate(this._width/2 +16, this._height/2 +16);
+			matrix.translate(_x, _y);
+			
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				_parent._BMD.draw(ibmd, matrix, null);
+			}
+			else
+			{
+				_parent._BMD.draw(_BMD, matrix, null);
+			}
 		}
 		
 		override public function onExit():void

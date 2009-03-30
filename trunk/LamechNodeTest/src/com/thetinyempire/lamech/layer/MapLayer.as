@@ -53,21 +53,21 @@ package com.thetinyempire.lamech.layer
 			}
 		}
 		
-		public function get visibleCells():Array2
-		{
-			return getInRegion(_view.x, _view.y, _view.width, _view.height);
-		}
+//		public function get visibleCells():Array2
+//		{
+//			return getInRegion(_view.x, _view.y, _view.width, _view.height);
+//		}
 		
-		protected function getInRegion(x1:uint, y1:uint, x2:uint, y2:uint):Array2
-		{
-			return _cells;
-		}
+//		protected function getInRegion(x1:uint, y1:uint, x2:uint, y2:uint):Array2
+//		{
+//			return _cells;
+//		}
 		
-		public function set debug(d:Boolean):void
-		{
-			_debug = d
-			//_updateSpriteSet();
-		}
+//		public function set debug(d:Boolean):void
+//		{
+//			_debug = d
+//			//_updateSpriteSet();
+//		}
 		
 		protected function _updateSpriteSet():void
 		{

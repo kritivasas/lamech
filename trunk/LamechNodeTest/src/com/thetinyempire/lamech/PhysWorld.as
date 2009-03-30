@@ -48,7 +48,7 @@ package com.thetinyempire.lamech
 			//defined by a RigidBodyData object.
 			//here we create a rigid body definition and add the box to it.
 			//the rigid body's initial position is set to the stage center. 
-			var rigidBodyData:RigidBodyData = new RigidBodyData(win.width / 2 , win.height - 32);
+			var rigidBodyData:RigidBodyData = new RigidBodyData(win.width / 2 ,500)// win.height - 32);
 			rigidBodyData.addShapeData(box);
 			_world.createBody(rigidBodyData);
 
@@ -73,7 +73,7 @@ package com.thetinyempire.lamech
 			//like every shape is defined by a ShapeData, every RigidBody is
 			//defined by a RigidBodyData object.
 			//here we create a rigid body definition and add the box to it.
-			//the rigid body's initial position is set to the stage center. 
+			//the rigid body's initial position is set to the stage center.  
 			var rigidBodyData:RigidBodyData = new RigidBodyData(pos.x, pos.y);
 			rigidBodyData.addShapeData(box);
 			
@@ -100,7 +100,7 @@ package com.thetinyempire.lamech
 		{
 			if(_world.bodyList)
 			{
-				_world.step(e.target.dt * 2, 10);
+				_world.step(e.target.dt * 4, 10);
 			}
 		}
 	}

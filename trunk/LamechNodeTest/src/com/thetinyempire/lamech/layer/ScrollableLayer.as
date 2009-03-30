@@ -39,11 +39,36 @@ package com.thetinyempire.lamech.layer
 			//this.anchor = new Point(-x, -y);
 		}
 		
-//		override public function draw(...args):void
-//		{
-//			super.draw()
-//			// but draw this instead?
-//		}
+		override public function draw(...args):void
+		{
+			var matrix:Matrix = new Matrix();
+			
+//			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+//			matrix.rotate(_rotation);
+			
+//			var tfp:Sprite = new Sprite();
+//			tfp.graphics.beginFill(0xff0000);
+//			tfp.graphics.drawCircle(0,0,5);
+//			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+//			matrix.translate(this._width/2 +16, this._height/2 +16);
+			matrix.translate(_x, _y);
+			
+			var bmd2:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
+			bmd2.copyPixels(_BMD, _view, new Point(0,0));
+			
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				_parent._BMD.draw(ibmd, matrix, null);
+			}
+			else
+			{
+				_parent._BMD.draw(bmd2, matrix, null);
+			}
+		}
 		
 		public function get originX():uint
 		{
@@ -65,27 +90,9 @@ package com.thetinyempire.lamech.layer
 			return _pxHeight;
 		}
 		
-		override public function get myBitmapDrawable():IBitmapDrawable
+		public function get view():Rectangle
 		{
-			var bmd2:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
-			//var matrix:Matrix = new Matrix();
-			//matrix.translate(_view.x, _view.y);
-			
-			//
-			
-			bmd2.copyPixels(_BMD, _view, new Point(0,0));
-			return(bmd2);
-			
-			//
-			
-//			
-//				var bmd1:BitmapData = new BitmapData(_view.width, _view.height, true, 0x00000000);
-//				var bmd2:BitmapData = new BitmapData(_pxWidth, _pxHeight, true, 0x00000000);
-//				
-//				bmd2.draw(_imgRes.img,null,null,null,null,true);
-//				bmd1.copyPixels(bmd2, _view, new Point(0,0));
-//				return bmd1;
-			
+			return(_view);
 		}
 	}
 }

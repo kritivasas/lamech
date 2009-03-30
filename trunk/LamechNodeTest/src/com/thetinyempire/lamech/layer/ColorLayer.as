@@ -1,9 +1,11 @@
 package com.thetinyempire.lamech.layer
 {
+	import com.thetinyempire.lamech.Director;
+	
 	import flash.display.BitmapData;
 	import flash.display.IBitmapDrawable;
+	import flash.geom.Matrix;
 	import flash.geom.Point;
-	import com.thetinyempire.lamech.Director;
 	
 	public class ColorLayer extends Layer
 	{
@@ -31,9 +33,32 @@ package com.thetinyempire.lamech.layer
 			_TBMD = new BitmapData(_width, _height, true, _RGBA);
 		}
 		
-		override public function get myBitmapDrawable():IBitmapDrawable
+		override public function draw(...args):void
 		{
-			return _TBMD;
+			var matrix:Matrix = new Matrix();
+			
+//			matrix.translate(-this._width/2 -16, -this._height/2 -16);
+//			matrix.rotate(_rotation);
+			
+//			var tfp:Sprite = new Sprite();
+//			tfp.graphics.beginFill(0xff0000);
+//			tfp.graphics.drawCircle(0,0,5);
+//			tfp.graphics.endFill();
+			
+			//_parent._BMD.draw(tfp, matrix, null, BlendMode.NORMAL);
+			
+//			matrix.translate(this._width/2 +16, this._height/2 +16);
+			matrix.translate(_x, _y);
+			
+			if(_grid && _grid.active)
+			{
+				var ibmd:IBitmapDrawable =  _grid.blit() as IBitmapDrawable;
+				_parent._BMD.draw(ibmd, matrix, null);
+			}
+			else
+			{
+				_parent._BMD.draw(_TBMD, matrix, null);
+			}
 		}
 	}
 }
