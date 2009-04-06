@@ -1,6 +1,6 @@
 package com.thetinyempire.lamech.resource
 {
-	import com.hexagonstar.util.debug.Debug;
+//	import com.hexagonstar.util.debug.Debug;
 	import com.thetinyempire.lamech.base.BaseLamechResource;
 	import com.thetinyempire.lamech.tiles.Tile;
 	import com.thetinyempire.lamech.tiles.TileSet;
@@ -61,7 +61,7 @@ package com.thetinyempire.lamech.resource
  
 			for each (var file:XML in fileList)
 			{
-				Debug.trace(file);
+//				Debug.trace(file);
 				var imgRes:ImageResource = new ImageResource(file);
 				imgRes.addEventListener(Event.COMPLETE, imgResLoadComplete);
 				_imgResCount++;
@@ -119,31 +119,31 @@ package com.thetinyempire.lamech.resource
 		private function initHandler(event:Event):void
 		{
             var loader:URLLoader = URLLoader(event.target);
-            Debug.trace("initHandler: " + loader);
+//            Debug.trace("initHandler: " + loader);
         }
         
         private function progressHandler(event:ProgressEvent):void
 		{
             var loader:URLLoader = URLLoader(event.target);
-            Debug.trace("progressHandler: " + loader);
+//            Debug.trace("progressHandler: " + loader);
         }
         
         private function completeHandler(event:Event):void
 		{
             var loader:URLLoader = URLLoader(event.target);
-            Debug.trace("completeHandler: " + loader);
+//            Debug.trace("completeHandler: " + loader);
             
             parseXML(new XML(_loader.data));
         }
 		
 		private function statusEventHandler(event:HTTPStatusEvent):void
 		{
-            Debug.trace("statusEventHandler: " + event);
+//            Debug.trace("statusEventHandler: " + event);
         }
         
         private function ioErrorHandler(event:IOErrorEvent):void
 		{
-            Debug.trace("ioErrorHandler: " + event);
+//            Debug.trace("ioErrorHandler: " + event);
         }
         
         //

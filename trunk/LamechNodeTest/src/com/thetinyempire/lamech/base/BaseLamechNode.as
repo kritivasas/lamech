@@ -1,6 +1,7 @@
 package com.thetinyempire.lamech.base
 {
-	import com.adobe.utils.ArrayUtil;
+	//import com.adobe.utils.ArrayUtil;
+	import org.casalib.util.ArrayUtil;
 	import com.thetinyempire.lamech.EventLoop;
 	import com.thetinyempire.lamech.Grid2D;
 	import com.thetinyempire.lamech.KeyboardManager;
@@ -201,7 +202,7 @@ package com.thetinyempire.lamech.base
 	        		hit = i
 	        	}
 	        }
-	        hit != null ? ArrayUtil.removeValueFromArray(_scheduledCalls, hit) : {};
+	        hit != null ? ArrayUtil.removeItem(_scheduledCalls, hit) : {};
 	        
 	        hit = null;
 	        i = null
@@ -212,7 +213,7 @@ package com.thetinyempire.lamech.base
 	        		hit = i
 	        	}
 	        }
-	        hit != null ? ArrayUtil.removeValueFromArray(_scheduledIntervalCalls, hit) : {};
+	        hit != null ? ArrayUtil.removeItem(_scheduledIntervalCalls, hit) : {};
 	        
 	        
 	        // UNSCHEDULE THAT SHIT WITH THE UNSCHEDULE MECHANISM SUCKAH!
@@ -324,7 +325,7 @@ package com.thetinyempire.lamech.base
 		protected function _remove(child:BaseLamechNode):void
 		{
 			var len_old:uint = _children.length;
-			ArrayUtil.removeValueFromArray(_children, child);
+			ArrayUtil.removeItem(_children, child);
 			
 			if(len_old == _children.length)
 			{
@@ -339,7 +340,7 @@ package com.thetinyempire.lamech.base
 		
 		public function contains(child:BaseLamechNode):Boolean
 		{
-			return(ArrayUtil.arrayContainsValue(_children, child));
+			return(ArrayUtil.contains(_children, child));
 		}
 		
 		// Gets a child from the container given its name
@@ -579,7 +580,7 @@ package com.thetinyempire.lamech.base
 			var hit:uint = 0
 			for each(var i:* in _actions)
 			{
-				if(!ArrayUtil.arrayContainsValue(_toRemove,i))
+				if(!ArrayUtil.contains(_toRemove,i))
 				{
 					hit++;
 				}
@@ -595,9 +596,9 @@ package com.thetinyempire.lamech.base
 			
 			for each(var x:* in _toRemove)
 			{
-				if(ArrayUtil.arrayContainsValue(_actions, x))
+				if(ArrayUtil.contains(_actions, x))
 				{
-					ArrayUtil.removeValueFromArray(_actions, x)
+					ArrayUtil.removeItem(_actions, x)
 				}
 			}
 			

@@ -1,6 +1,6 @@
 package com.thetinyempire.lamech.resource
 {
-	import com.hexagonstar.util.debug.Debug;
+	//import com.hexagonstar.util.debug.Debug;
 	import com.thetinyempire.lamech.base.BaseLamechResource;
 	
 	import flash.display.IBitmapDrawable;
@@ -56,7 +56,7 @@ package com.thetinyempire.lamech.resource
         }
 
         private function ioErrorHandler(event:IOErrorEvent):void {
-            Debug.trace("ioErrorHandler: " + event);
+            //Debug.trace("ioErrorHandler: " + event);
         }
         
         public function get img():IBitmapDrawable
