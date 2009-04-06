@@ -35,11 +35,15 @@ package com.thetinyempire.lamech
 		private var _position:Point;
 		private var _image:Object;
 		
-		public function LamechSprite(image:Object, position:Point = null, rotation:Number = 0, ARGB:uint = 0x00000000, anchor:Object = null, density:uint = 0)
+		public function LamechSprite(image:Object = null, position:Point = null, rotation:Number = 0, ARGB:uint = 0x00000000, anchor:Object = null, density:uint = 0)
 		{
 			super();
 			
-			if(image is String)
+			if(image == null)
+			{
+				_image = debugSprite();
+			}
+			else if(image is String)
 			{
 				//load the image from the rescource based on the "image" as a string id value
 			}
@@ -66,8 +70,21 @@ package com.thetinyempire.lamech
 			//this.scale = scale;
 			_ARGB = ARGB;
 			
-			_physRep = _physWorld.createBox(this.anchor, density);
-			
+			createPhysRep();
+		}
+		
+		protected function createPhysRep():void
+		{
+			_physRep = _physWorld.createBox(this.anchor, .25, true);
+		}
+		
+		protected function debugSprite():Sprite
+		{
+			var sp:Sprite = new Sprite()
+			sp.graphics.lineStyle(1, 0xff0000);
+			sp.graphics.drawRect(0,0,32,32);
+			sp.graphics.endFill();
+			return(sp);
 		}
 		
 		override public function draw(...args):void
