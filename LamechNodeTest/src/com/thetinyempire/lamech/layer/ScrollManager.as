@@ -8,7 +8,7 @@ package com.thetinyempire.lamech.layer
 	
 	import org.casalib.util.ArrayUtil;
 	
-	import com.hexagonstar.util.debug.Debug;
+	//import com.hexagonstar.util.debug.Debug;
 	
 //	'''Manages scrolling of Layers in a Cocos Scene.
 //

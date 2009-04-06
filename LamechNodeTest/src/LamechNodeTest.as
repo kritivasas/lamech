@@ -1,5 +1,5 @@
 package {
-	import com.hexagonstar.util.debug.Debug;
+//	import com.hexagonstar.util.debug.Debug;
 	import com.thetinyempire.lamech.*;
 	import com.thetinyempire.lamech.action.*;
 	import com.thetinyempire.lamech.config.WindowConfig;
@@ -17,7 +17,7 @@ package {
 	{
 		public function LamechNodeTest()
 		{
-			Debug.monitor(this.stage);
+//			Debug.monitor(this.stage);
 			
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			

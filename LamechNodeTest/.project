@@ -14,11 +14,4 @@
 	<natures>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>[source path] CLASS LIBRARY AS3</name>
-			<type>2</type>
-			<location>/Users/fusupo/Documents/CLASS LIBRARY AS3</location>
-		</link>
-	</linkedResources>
 </projectDescription>
