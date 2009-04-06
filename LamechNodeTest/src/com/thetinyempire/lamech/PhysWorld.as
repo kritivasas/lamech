@@ -4,16 +4,12 @@ package com.thetinyempire.lamech
 	import de.polygonal.motor2.collision.shapes.data.BoxData;
 	import de.polygonal.motor2.dynamics.RigidBody;
 	import de.polygonal.motor2.dynamics.RigidBodyData;
-	import de.polygonal.motor2.dynamics.forces.Wind;
 	import de.polygonal.motor2.math.AABB2;
-	import de.polygonal.motor2.math.V2;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
 	import flash.geom.Point;
-
-	import com.hexagonstar.util.debug.Debug;
 	
 	public class PhysWorld extends EventDispatcher
 	{
@@ -62,7 +58,7 @@ package com.thetinyempire.lamech
             return _instance as PhysWorld;
         }
         
-        public function createBox(pos:Point, density:uint = 0):RigidBody
+        public function createBox(pos:Point, density:uint = 0, preventRotation:Boolean = false):RigidBody
         {
         	//every shape is defined by a 'template', implemented as a subclass of the ShapeData class.
 			//this makes it easy to reuse the same definition for creating multiple shapes.
@@ -75,6 +71,7 @@ package com.thetinyempire.lamech
 			//here we create a rigid body definition and add the box to it.
 			//the rigid body's initial position is set to the stage center.  
 			var rigidBodyData:RigidBodyData = new RigidBodyData(pos.x, pos.y);
+			rigidBodyData.preventRotation = true;
 			rigidBodyData.addShapeData(box);
 			
 			//use the definition of the rigid body data to create a body inside the world  
@@ -102,6 +99,13 @@ package com.thetinyempire.lamech
 			{
 				_world.step(e.target.dt * 4, 10);
 			}
+		}
+		
+		// 
+		
+		public function get world():World
+		{
+			return _world;
 		}
 	}
 }

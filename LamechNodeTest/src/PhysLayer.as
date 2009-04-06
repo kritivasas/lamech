@@ -5,10 +5,10 @@ package
 	import com.thetinyempire.lamech.LamechSprite;
 	import com.thetinyempire.lamech.PhysWorld;
 	import com.thetinyempire.lamech.action.*;
+	import com.thetinyempire.lamech.game.actor.BaseActor;
 	import com.thetinyempire.lamech.layer.ScrollableLayer;
 	
 	import flash.display.BitmapData;
-	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.geom.Point;
 	
@@ -20,12 +20,7 @@ package
 		{
 			super();
 			
-			var sp:Sprite = new Sprite()
-			sp.graphics.beginFill(0xff0000, 1);
-			sp.graphics.drawRect(0,0,32,32);
-			sp.graphics.endFill();
-			
-			_sprite = new LamechSprite(sp, new Point(50,50),0,0x00000000,null,1);
+			_sprite = new BaseActor(null, new Point(50,200),0,0x00000000,null);
 			
 			add(_sprite,0,"");
 			
